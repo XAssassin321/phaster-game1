@@ -1,0 +1,4 @@
+= Phaser Game 1
+
+== Idea :
+Idle TD with basic upgrades and score counter.
