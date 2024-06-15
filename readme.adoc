@@ -2,3 +2,50 @@
 
 == Idea :
 Idle TD with basic upgrades and score counter.
+
+
+== Actor Stats - V1
+
+for each "counter"
+- base # flat1		| initial damage
+- base # flat2 		| added / reduced
+- base % multi1 	| increased / decreased
+- base % multi2 	| more / less
+
+- modifiers [] 		| array of modifiers to apply
+modifiers {
+	flat : []
+	multi1 : []
+	multi2 : []
+}
+== Actor Stats V2 (ToDo , Plan WIP)
+Should be renamed to NumberModifiers then have recursive classes or StatsContainer class utilising NumberModifiers ???
+
+-
+- Base + Base flat & multi modifiers
+- Base Min & Max + Min & Max flat & Multi Modifiers + Min & Max soft and hard caps.
+- Base AdvancedModifiers??? that accepts a function callback for advanced calculation formulas .
+
+
+- Total + Total flat & multi modifiers
+-
+
+== Game Tick & Timed Events
+
+
+== Types of entities
+- Player
+- Enemy
+- Environment
+- Weapon & Projectiles ???
+-
+
+== interactions
+- create player
+- create enemies
+- player attack enemies.
+- player selects or auto targets enemies
+- enemies attack players
+- player takes damage
+- enemies take damage
+- enemies give resources & game stats on death.
