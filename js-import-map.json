@@ -1,0 +1,8 @@
+{
+	"imports": {
+		"MainScene": "./js/scenes/MainScene.js",
+		"GameOverScene": "./js/scenes/GameOverScene.js",
+		"Stat": "./js/stat.js",
+		"pixelart": "./data/json/pixelart.js"
+	}
+}

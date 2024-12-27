@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
 	<base href=".">
-<!--  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser-arcade-physics.min.js"></script>-->
+<!--	<script type="importmap" src="./js-import-map.importmap"></script>-->
+	<script type="importmap" rel="text/json">
+{
+	"imports": {
+		"MainScene": "./js/scenes/MainScene.js",
+		"GameOverScene": "./js/scenes/GameOverScene.js",
+		"Stat": "./js/stat.js",
+		"pixelart": "./data/json/pixelart.js"
+	}
+}
+
+
+	</script>
+	<!--  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser-arcade-physics.min.js"></script>-->
 	<script src="js/phaser.js"></script>
-<!--	<script src="js/bootstrap.js" type="module"></script>-->
-<!--  <script src="js/stat.js"></script>-->
-<!--  <script src="js/game.js"></script>-->
-  <script src="js/game.js" type="module"></script>
-  <link rel="stylesheet" href="css/style.css">
+	<!--	<script src="js/bootstrap.js" type="module"></script>-->
+	<!--  <script src="js/stat.js"></script>-->
+	<!--  <script src="js/game.js"></script>-->
+	<script src="js/game.js" type="module"></script>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 
 </body>
 </html>

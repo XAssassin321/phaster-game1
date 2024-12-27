@@ -62,8 +62,12 @@ class Stat {
 	 * Increase total value by a fixed amount.
 	 */
 	increaseBy(increase) {
-		this.total = this.total + increase;
-
+		if (this.lastTotal === 0) {
+			this.lastTotal = this.baseStat;
+		}
+		let newTotal = this.lastTotal + increase;
+		this.total = newTotal;
+		this.lastTotal = newTotal;
 	}
 
 	/**

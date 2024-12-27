@@ -2,26 +2,23 @@
 
 == Idea :
 Idle TD with basic upgrades and score counter.
+The idle part comes after some game play & setup / collection of auto attack parts.
 
+== v0.2.x - ToDo
 
-== Actor Stats - V1
+=== Game Scenes
 
-for each "counter"
-- base # flat1		| initial damage
-- base # flat2 		| added / reduced
-- base % multi1 	| increased / decreased
-- base % multi2 	| more / less
+- Loading: Used for intro & scene transitions.
+- Game
+- Game Over
+- Menu
+- Pause
 
-- modifiers [] 		| array of modifiers to apply
-modifiers {
-	flat : []
-	multi1 : []
-	multi2 : []
-}
-== Actor Stats V2 (ToDo , Plan WIP)
+== Game Tick & Timed Events
+
+=== Actor Stats V2
 Should be renamed to NumberModifiers then have recursive classes or StatsContainer class utilising NumberModifiers ???
 
--
 - Base + Base flat & multi modifiers
 - Base Min & Max + Min & Max flat & Multi Modifiers + Min & Max soft and hard caps.
 - Base AdvancedModifiers??? that accepts a function callback for advanced calculation formulas .
@@ -30,21 +27,42 @@ Should be renamed to NumberModifiers then have recursive classes or StatsContain
 - Total + Total flat & multi modifiers
 -
 
-== Game Tick & Timed Events
 
+== V0.1.x - WIP
+=== Primary Objectives
+- Main game scene
+- player movements
+- enemy spawning & movements
+- player attack
+- enemy attack
+- player damage
+- enemy damage
 
-== Types of entities
+=== To Do List
+- [x] Game scene
+- [x] player movement
+- [x] player projectile attack
+- [x] enemy movement
+- [x] enemy auto spawning
+- [x] enemy spawn randomisation
+- [x] game difficulty progression based on score (both player & enemy move faster)
+- [x] player destroy enemy (single heat death, no enemy life)
+- [] player takes damage on kill failure
+- [] player takes damage on collision with enemy
+
+=== Actor Stats - V1
+
+=== Types of entities
 - Player
 - Enemy
+- Weapon Projectiles
 - Environment
-- Weapon & Projectiles ???
--
 
-== interactions
+=== interactions
 - create player
 - create enemies
 - player attack enemies.
-- player selects or auto targets enemies
+- player aims at enemies
 - enemies attack players
 - player takes damage
 - enemies take damage
