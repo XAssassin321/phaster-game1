@@ -1,20 +1,20 @@
-= Phaser Game 1
+= Idle Home Defender
+Lore: Defend your home from invaders,
+Game play: Semi Idle TD with basic upgrades and score counter. The idle part comes after some game play & setup / collection of auto attack parts.
 
-== Idea :
-Idle TD with basic upgrades and score counter.
-The idle part comes after some game play & setup / collection of auto attack parts.
+== Plan & Notes v0.2.x - ToDO : Plan WIP
+=== THings to CONSIDER in next version
+- Game Tick. TPS & other rate limits
+- Items, Ledger & Wallets (from merchant.js)
+-
 
-== v0.2.x - ToDo
 
-=== Game Scenes
-
-- Loading: Used for intro & scene transitions.
-- Game
-- Game Over
-- Menu
-- Pause
-
-== Game Tick & Timed Events
+== Plan & Notes v0.1.x
+=== Key Features
+- Multiple scenes: Boot, Menu, Main/Game, Stats, GameOver
+- NumberManager class : Manager a number & it's modifiers
+- NumberModifier class : Used in NumberManager to add & link modifiers to their sources.
+- Actor Class : Generic actor class for tracking stats & details of game NPCs and maybe players.
 
 === Actor Stats V2
 Should be renamed to NumberModifiers then have recursive classes or StatsContainer class utilising NumberModifiers ???
@@ -67,3 +67,6 @@ Should be renamed to NumberModifiers then have recursive classes or StatsContain
 - player takes damage
 - enemies take damage
 - enemies give resources & game stats on death.
+
+== Useful Links
+- https://github.com/Flaque/merchant.js?files=1

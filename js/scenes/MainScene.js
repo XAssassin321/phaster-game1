@@ -1,5 +1,6 @@
 import Stat from "Stat";
 import pixelart from "pixelart"
+
 export default class MainScene extends Phaser.Scene {
 
 	constructor(config) {
@@ -18,10 +19,10 @@ export default class MainScene extends Phaser.Scene {
 		this.stats = {
 			score: new Stat(0),
 			coins: new Stat(0),
-			life: new Stat(10),
+			life: new Stat(100),
 			damage: new Stat(10),
 			fireRatePerSec: new Stat(0),
-			movementSpeedX: new Stat(200), // Velocity
+			movementSpeedX: new Stat(500), // Velocity
 			movementSpeedY: new Stat(200), //Velocity
 		};
 
@@ -51,13 +52,11 @@ export default class MainScene extends Phaser.Scene {
 		// this.load.image('sky', 'https://labs.phaser.io/assets/skies/space1.png');
 		//this.load.image('logo', 'https://labs.phaser.io/assets/sprites/phaser3-logo.png');
 		// this.load.image('red', 'https://labs.phaser.io/assets/particles/red.png');
-console.log(pixelart);
+		// console.log(pixelart);
 	}
 
 	create() {
 		// let {gameWidth, gameHeight} = this.sys.game.canvas;
-
-
 		const pixelWidth = 4;
 		const pixelHeight = 4;
 		this.make.graphics()
@@ -75,7 +74,7 @@ console.log(pixelart);
 
 
 		this.textures.generate('playerA', {data: pixelart.playerAPixles, pixelWidth: pixelWidth});
-		this.textures.generate('enemy1', {data: pixelart.enemyAPixles, pixelWidth: pixelWidth});
+		this.textures.generate('enemy1', {data: pixelart.enemyBPixles, pixelWidth: pixelWidth});
 
 		this.textures.generate('coin', {data: pixelart.coinPixles, pixelWidth: pixelWidth});
 		this.textures.generate('powerUp1', {data: pixelart.powerUp1Pixles, pixelWidth: pixelWidth});
@@ -106,7 +105,7 @@ console.log(pixelart);
 		this.collectable1.children.iterate(function (child) {
 			child.setBounceY(Phaser.Math.FloatBetween(0.1, 0.4));
 			child.setScale(0.5);
-			child.setSize(10,10);
+			child.setSize(10, 10);
 			child.body.setGravityY(100);
 			// console.log(child);
 		});
@@ -136,7 +135,6 @@ console.log(pixelart);
 		// this.platforms.create(400, 400 - 100, 'ground1').setScale(5, 1).refreshBody();
 		// this.platforms.create(600, 300, 'ground1').setScale(5, 1);
 
-
 		this.physics.add.collider(this.player1, this.platforms);
 		// this.physics.add.collider(this.bullet1, this.platforms);
 		this.physics.add.collider(this.collectable1, this.platforms);
@@ -162,7 +160,7 @@ console.log(pixelart);
 			}
 		);
 		this.physics.add.overlap(this.spritePools['enemy1'], this.platform1,
-			(platform,enemy) => {
+			(platform, enemy) => {
 				// platform.disableBody(true, true);
 				// platform.setActive(false);
 				// platform.setVisible(false);
@@ -208,7 +206,7 @@ console.log(pixelart);
 		this.stats.coins.addFlatModifier(1);
 		this.stats.coins.increments(20);
 
-		this.stats.fireRatePerSec.addFlatModifier(4);
+		this.stats.fireRatePerSec.addFlatModifier(10);
 		this.stats.fireRatePerSec.increment();
 
 
@@ -216,7 +214,6 @@ console.log(pixelart);
 		this.stats.movementSpeedY.increment();
 
 		this.createStatsBoard();
-
 
 	}
 
@@ -260,7 +257,7 @@ console.log(pixelart);
 			enemy.setVelocityY(randomVelocity);
 			// this.spritePools['enemy1'].getFirstDead(true,100,100);
 		}
-		if(this.stats.life.getTotal() <= 0){
+		if (this.stats.life.getTotal() <= 0) {
 			console.log("DEAD");
 			this.scene.start("GameOverScene");
 		}
@@ -331,7 +328,7 @@ console.log(pixelart);
 	}
 
 	tryFireBullet(actor) {
-		if ( this.inputs.aio.attack.isDown) {
+		if (this.inputs.aio.attack.isDown) {
 			if (this.canFireBullet()) {
 				this.fireBullet(actor);
 			}
